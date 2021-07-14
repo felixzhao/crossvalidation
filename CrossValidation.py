@@ -94,3 +94,19 @@ tscv = TimeSeriesSplit(n_splits=3)
 print(tscv)
 for train, test in tscv.split(X):
     print("%s %s" % (train, test))
+
+
+"""
+If the data ordering is not arbitrary (e.g. samples with the same class label are contiguous), 
+shuffling it first may be essential to get a meaningful cross-validation result.
+"""
+# K fold (shuffle)
+print()
+print("K Fold (shuffle)")
+X = ["a", "a", "b", "b", "c", "d"]
+kf = KFold(n_splits=3, shuffle=True)
+print(f'k < len of set')
+print(f'K fold sample:')
+print(f'train_set test_set')
+for train, test in kf.split(X):
+    print("%s %s" % (train, test))
