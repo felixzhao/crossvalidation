@@ -26,6 +26,10 @@ clf = svm.SVC(kernel='linear', C=1).fit(X_train, y_train)
 score = clf.score(X_test, y_test)
 print(f'validation score: {score}\n')
 
+
+# Cross Validation
+clf = svm.SVC(kernel='linear', C=1)
+
 # cross validation score
 scores = cross_val_score(clf, X, y, cv=5)
 print(f'cross validation scores:\n{scores}\n')
